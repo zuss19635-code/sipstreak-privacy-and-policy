@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — SipStreak</title>
+  <meta name="description" content="Privacy Policy for SipStreak - Calm daily hydration tracking. Local-first, private, and zero advertising or tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       SipStreak Design System Tokens (Coastal Theme)
+       ========================================================================== */
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+
+      /* Coastal Light (Default App Theme) */
+      --bg-canvas: #F8F8F3;
+      --bg-surface: #FDFDF9;
+      --bg-surface-tinted: #EAF5F8;
+      --bg-surface-elevated: #FFFFFF;
+      --text-main: #202A2A;
+      --text-muted: #7B8585;
+      --text-subtle: #9EA8A8;
+      
+      --color-primary: #367F9F;
+      --color-primary-hover: #2B6883;
+      --color-water-blue: #75B9D8;
+      --color-water-soft: #EAF5F8;
+      --color-hairline: #E3E7E4;
+      --color-border-card: #E5ECE9;
+      
+      --badge-bg: #EAF5F8;
+      --badge-text: #20485A;
+      
+      --shadow-sm: 0 1px 3px rgba(32, 42, 42, 0.04);
+      --shadow-md: 0 4px 12px rgba(32, 42, 42, 0.06);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      
+      --max-width: 680px;
+      --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      /* Coastal Dark Theme */
+      --bg-canvas: #0E1720;
+      --bg-surface: #13202B;
+      --bg-surface-tinted: #192A38;
+      --bg-surface-elevated: #182734;
+      --text-main: #EDF2F3;
+      --text-muted: #8C9FA6;
+      --text-subtle: #5E7179;
+      
+      --color-primary: #75B9D8;
+      --color-primary-hover: #92CEE9;
+      --color-water-blue: #5A97B5;
+      --color-water-soft: #162836;
+      --color-hairline: #223442;
+      --color-border-card: #203342;
+      
+      --badge-bg: #1B3140;
+      --badge-text: #D7EEF7;
+      
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Base Reset & Rhythm */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: var(--transition-smooth);
+      padding: 0 16px 48px;
+    }
+
+    /* Container matching Compose max 600-680dp */
+    .app-viewport {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 24px;
+    }
+
+    /* Top App Bar Header */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 4px 8px;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--color-water-blue), var(--color-primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 3px 8px rgba(54, 127, 159, 0.25);
+    }
+
+    .brand-info h1 {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .brand-info p {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--color-hairline);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--bg-surface-tinted);
+      border-color: var(--color-primary);
+    }
+
+    /* Hero Calm Water Card */
+    .hero-banner {
+      background: linear-gradient(180deg, var(--bg-surface-tinted) 0%, var(--bg-surface) 100%);
+      border: 1px solid var(--color-border-card);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-water-decor {
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      opacity: 0.12;
+      pointer-events: none;
+      color: var(--color-primary);
+    }
+
+    .hero-tag {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid var(--color-hairline);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text-main);
+      max-width: 90%;
+    }
+
+    .hero-lead {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .pill-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .pill-stat svg {
+      color: var(--color-primary);
+    }
+
+    /* Section Headers */
+    .section-label {
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--color-hairline);
+      margin-top: 8px;
+    }
+
+    /* Surface Cards (Jetpack Compose SipSurfaceContainer Style) */
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border-card);
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: var(--transition-smooth);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface-tinted);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-title-group h2 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .card-title-group p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .card-body {
+      color: var(--text-main);
+      font-size: 14.5px;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-body p {
+      color: var(--text-main);
+    }
+
+    .sub-bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 2px;
+    }
+
+    .sub-bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .sub-bullet-list li svg {
+      min-width: 18px;
+      color: var(--color-primary);
+      margin-top: 3px;
+    }
+
+    /* Comparison Table / Callout Box */
+    .callout-box {
+      background: var(--bg-surface-tinted);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      border: 1px solid var(--color-hairline);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .callout-box svg {
+      min-width: 20px;
+      color: var(--color-primary);
+      margin-top: 2px;
+    }
+
+    .callout-box p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-main);
+    }
+
+    /* Permissions Breakdown Grid */
+    .permissions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    @media (min-width: 520px) {
+      .permissions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .perm-card {
+      background: var(--bg-canvas);
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .perm-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .perm-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      letter-spacing: 0.03em;
+    }
+
+    .perm-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Contact Action Button & Email Row */
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border-card);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--bg-surface-tinted);
+      color: var(--color-primary);
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--color-hairline);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-hairline);
+    }
+
+    /* Toast Notification for Clipboard Copy */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text-main);
+      color: var(--bg-canvas);
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Metadata Footer */
+    .app-footer {
+      margin-top: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-hairline);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12.5px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-viewport">
+    
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="brand-mark">
+        <div class="brand-icon-wrapper" aria-hidden="true">
+          <!-- Calm Water Droplet SVG Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>SipStreak</h1>
+          <p>Calm daily hydration</p>
+        </div>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle light or dark theme">
+        <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span id="themeText">Theme</span>
+      </button>
+    </header>
+
+    <!-- Main Hero Card -->
+    <section class="hero-banner">
+      <!-- Water Droplet Background Artwork -->
+      <svg class="hero-water-decor" width="160" height="160" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+      </svg>
+
+      <span class="hero-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        Privacy Policy &amp; Security
+      </span>
+
+      <h2 class="hero-title">Your hydration rhythm belongs solely to you.</h2>
+      
+      <p class="hero-lead">
+        SipStreak is crafted as a quiet, respectful wellness companion. We believe your daily health habits are personal, intimate, and deserve absolute privacy by design.
+      </p>
+
+      <div class="hero-pills">
+        <span class="pill-stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+          100% Local-First
+        </span>
+        <span class="pill-stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+          No Cloud Accounts
+        </span>
+        <span class="pill-stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+          Zero Ads or Trackers
+        </span>
+        <span class="pill-stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+          Instant One-Tap Reset
+        </span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Local-First Storage -->
+    <div class="section-label">1. Data Architecture</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Local-First On-Device Storage</h2>
+          <p>Everything stays on your phone. Nothing touches our servers.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          All water intake logs, hydration volume records, custom goals, active streaks, reminder schedules, and appearance preferences are stored exclusively on your device using Android local storage (Room database and Jetpack DataStore).
+        </p>
+        <ul class="sub-bullet-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>No account required:</strong> You never need to provide your name, phone number, email address, or create a password to use SipStreak.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>No remote database:</strong> SipStreak does not operate remote servers to host or sync your personal hydration history.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Works completely offline:</strong> SipStreak operates flawlessly without an active internet connection.</span>
+          </li>
+        </ul>
+
+        <div class="callout-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <p>
+            Because your data is preserved purely on your local hardware, uninstalling the app or wiping app storage in Android settings permanently deletes your records, unless you use your device's native Android Google Drive backup.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SECTION 2: Device Permissions -->
+    <div class="section-label">2. Device Permissions</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Strictly Necessary Permissions</h2>
+          <p>Only what is required to provide timely hydration nudges.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          SipStreak requests the bare minimum permissions necessary to deliver gentle hydration reminders at your chosen times. We never request location, contacts, camera, microphone, or external media access.
+        </p>
+
+        <div class="permissions-grid">
+          <div class="perm-card">
+            <div class="perm-header">
+              <span>Post Notifications</span>
+              <span class="perm-badge">Optional</span>
+            </div>
+            <p class="perm-desc">
+              <code>POST_NOTIFICATIONS</code> is requested only when you choose to enable hydration reminders. It is used solely to deliver quiet notifications on your device.
+            </p>
+          </div>
+
+          <div class="perm-card">
+            <div class="perm-header">
+              <span>Boot Receiver</span>
+              <span class="perm-badge">System</span>
+            </div>
+            <p class="perm-desc">
+              <code>RECEIVE_BOOT_COMPLETED</code> allows the Android system to reschedule your existing reminder alarms after your device is restarted or powered back on.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SECTION 3: Zero Advertising & Tracking -->
+    <div class="section-label">3. Advertising &amp; Third-Party SDKs</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <path d="M4.93 4.93a10 10 0 0 0 14.14 14.14"></path>
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74"></path>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Zero Ads, Zero Trackers</h2>
+          <p>Your attention and health habits are not for sale.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          SipStreak contains <strong>no third-party advertising SDKs</strong>, no behavioral profiling, and no commercial tracking libraries. We do not sell, rent, monetize, or disclose your hydration entries to data brokers, insurers, or marketers.
+        </p>
+        <p>
+          Your daily sips, wake-up times, and streak lengths remain confidential on your device.
+        </p>
+      </div>
+    </article>
+
+    <!-- SECTION 4: User Rights & Data Deletion -->
+    <div class="section-label">4. Your Control &amp; Data Erasure</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Complete Data Control</h2>
+          <p>Erase your entire history with a single tap at any time.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          You have full control over your data directly within the app:
+        </p>
+        <ul class="sub-bullet-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Edit or Delete Individual Logs:</strong> Tap any recorded entry on the Today screen or History journal to modify the amount or remove it completely.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Clear Intake Logs:</strong> Erase all historical consumption records while keeping your preferences intact.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Reset Everything:</strong> In <em>Settings &rarr; General &rarr; Reset all data</em>, you can instantly erase all logs, goal history, and custom settings, cancelling all alarms and restoring SipStreak to its initial clean state.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- SECTION 5: Children's Privacy & Health Notice -->
+    <div class="section-label">5. Health &amp; Children's Privacy</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Wellness Purpose &amp; Protection</h2>
+          <p>Important guidance for healthy hydration habits.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          <strong>General Wellness Purpose:</strong> SipStreak is a habit-building lifestyle and logging tool for everyday hydration. It is not a medical device and does not offer medical diagnoses, prescriptions, or clinical fluid management advice. Consult a medical professional regarding personal fluid intake requirements.
+        </p>
+        <p>
+          <strong>Children's Privacy:</strong> SipStreak does not knowingly collect or solicit personal identifiable information from children under 13 (or under 16 in certain jurisdictions). Because no personal data is transmitted off the device, children can use the logging features safely under parental guidance.
+        </p>
+      </div>
+    </article>
+
+    <!-- SECTION 6: Policy Changes -->
+    <div class="section-label">6. Policy Updates</div>
+
+    <article class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="card-title-group">
+          <h2>Changes to this Policy</h2>
+          <p>Transparency through every version.</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          We may occasionally update this Privacy Policy to reflect app updates or regulatory requirements. Any updates will be reflected with an updated effective date on this page and within the app under <em>Settings &rarr; Privacy Policy</em>. Continued use of the app signifies acceptance of any updated terms.
+        </p>
+        <p>
+          <strong>Effective Date:</strong> January 1, 2025<br>
+          <strong>Latest Revision:</strong> Version 1.0.0
+        </p>
+      </div>
+    </article>
+
+    <!-- SECTION 7: Contact Card -->
+    <div class="section-label">7. Support &amp; Contact</div>
+
+    <div class="contact-card">
+      <div class="card-icon" style="width: 48px; height: 48px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+
+      <div style="max-width: 480px;">
+        <h2 style="font-size: 19px; font-weight: 600; margin-bottom: 6px;">Questions or Feedback?</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">
+          Have questions regarding this Privacy Policy or need help with your hydration journal? We are glad to assist you directly.
+        </p>
+      </div>
+
+      <div class="contact-actions">
+        <a href="mailto:muhammadfurqanaslam001@gmail.com?subject=SipStreak%20Privacy%20Inquiry" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          Email Support
+        </a>
+
+        <button class="btn-secondary" id="copyEmailBtn" data-email="muhammadfurqanaslam001@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Address
+        </button>
+      </div>
+    </div>
+
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <div class="footer-links">
+        <span>SipStreak v1.0.0</span>
+        <span>&bull;</span>
+        <span>Package: <code>com.aistudio.sipstreak.wtrklm</code></span>
+      </div>
+      <p>Crafted natively with Kotlin &amp; Jetpack Compose for calm, private wellness.</p>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>Email copied to clipboard</span>
+  </div>
+
+  <script>
+    // Theme Switcher Logic matching SipStreak's Light/Dark Coastal palette
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const root = document.documentElement;
+
+    function getSystemTheme() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('sipstreak_theme', theme);
+      
+      if (theme === 'dark') {
+        themeText.textContent = 'Dark';
+        themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+      } else {
+        themeText.textContent = 'Light';
+        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+      }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('sipstreak_theme') || getSystemTheme();
+    setTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Copy Email to Clipboard
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const toast = document.getElementById('toast');
+    let toastTimeout;
+
+    copyBtn.addEventListener('click', () => {
+      const email = copyBtn.getAttribute('data-email');
+      navigator.clipboard.writeText(email).then(() => {
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2600);
+      }).catch(err => {
+        window.location.href = `mailto:${email}`;
+      });
+    });
+  </script>
+</body>
+</html>
